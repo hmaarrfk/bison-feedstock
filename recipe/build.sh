@@ -2,6 +2,9 @@
 
 export PERL=${BUILD_PREFIX}/bin/perl
 
+# Must link to rt
+export LDFLAGS="${LDFLAGS} -lrt"
+
 M4=m4 \
   ./configure --prefix="$PREFIX" --host=${HOST}
 make -j${CPU_COUNT} ${VERBOSE_AT}
