@@ -3,7 +3,8 @@
 export PERL=${BUILD_PREFIX}/bin/perl
 
 # Must link to rt
-export LDFLAGS="${LDFLAGS} -lrt"
+export CFLAGS="${CFLAGS} -lrt"
+export CXXFLAGS="${CXXFLAGS} -lrt"
 
 M4=m4 \
   ./configure --prefix="$PREFIX" --host=${HOST}
